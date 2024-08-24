@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+</head>
+<body>
+    <h1>تسجيل الدخول</h1>
+    <form id="login-form">
+        <label for="username">اسم المستخدم:</label>
+        <input type="text" id="username" required>
+        <button type="submit">تسجيل الدخول</button>
+    </form>
+
+    <script>
+      document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        if (username.trim() !== '') {
+          localStorage.setItem('username', username);
+          window.location.href = 'chat.html';
+        }
+      });
+    </script>
+
+</body></html>
